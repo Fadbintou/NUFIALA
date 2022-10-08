@@ -1,0 +1,94 @@
+
+<?php
+    session_start();
+    //connexion a la base de donnée
+    $db = new PDO('mysql:host=localhost;dbname=fiala;', 'root', '');
+    $app = "SELECT * FROM  apprenants";
+    $app = $db->prepare($app);
+    // executer la requette
+    $app->execute();
+    // selectionnner la table  produit
+    $appcour = "SELECT apprenants.id,apprenants.nom,apprenants       .cour,matiere.exercice,matiere.corrige,categorie_matiere.nom AS categorie_matiere.nom FROM matiere JOIN categorie_matiere ON (matiere.categorie_matiere = id)";
+
+    $cour = $db->prepare($appcour);
+ 
+    $cour-> execute();
+    $Matiere = $cour->fetchAll();
+
+?>
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/comptutil.css">
+    <title>COMPTE UTILISATEUR </title>  
+</head>
+<body>
+
+
+<div class="container">
+        <div class="sidebar">
+            <ul>
+                <li class="active"><a href="comptutil.html"><i class="fa fa-home"></i> Mon compte </a></li>
+                <li class="my-2"><a href="modification.php"><i class="fa fa-user"></i> Modification </a></li>
+                <li class="my-2"><a href="reservation.php"><i class="fa fa-car"></i>Reservation </a></li>
+                <li class="my-2"><a href="../php/deconnexion.php"><i class="fa fa-flag"></i>Deconnection </a></li> 
+            </ul>
+        </div>
+        <div class="sidecontainer">
+            <div class="nav">
+                <div> <h1 class="logo "><a href="#">NUFIALA</a></h1></div>
+            </div>
+        </div>
+</div>
+<?php
+        $db = new PDO('mysql:host=localhost;dbname=fiala;', 'root', '');
+        $appcour = "SELECT apprenants.id,apprenants.nom,apprenants.cour,matiere.exercice,matiere.corrige,categorie_matiere.nom AS categorie_matiere.nom FROM matiere JOIN categorie_matiere ON (matiere.categorie_matiere = id)";
+               
+?>
+
+
+    <?php
+    // parcourir tout le tableaux 
+        $recup = $app->fetchAll();
+        foreach($recup as $Matiére){
+        // recuperer les  donner de la requette
+        
+    ?>
+    
+<table class="bordertable">
+
+
+<thead>
+        <tr>
+            <th> Id </th>
+            <th> Nom </th>
+            <th> Prenom </th>
+            <th> Tel </th>
+            <th> Email </th>
+            <th> passe </th>
+            <th> date</th>
+        </tr>               
+</thead>     
+              
+    <tr>
+       
+    </tr>
+</table>
+    <?php
+    
+}
+    
+?>
+
+
+
+       
+
+    
+
+   
+    
+</body> 
+</html>

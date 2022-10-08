@@ -1,0 +1,73 @@
+<?php
+session_start();
+//connexion a la base de donnée
+$db = new PDO('mysql:host=localhost;dbname=fiala;', 'root', '');
+
+if(isset($_POST['submit'])){
+    if(!empty($_POST['ident']) AND !empty($_POST['password'])){    
+//declaration des variables        
+    $email = $_POST['ident'];
+    $passe = $_POST['password'];
+    
+     $recupuser= $db->prepare('SELECT * FROM apprenants WHERE email=? AND passe =?');
+     $recupuser->execute(array($email,$passe));
+     $user = $recupuser->fetch();
+        if($recupuser->rowCount() >0){
+            $_session['ident'] =$email;
+            $_session['password'] = $passe;
+            $_session['id'] = $recupuser->fetch()['id'];
+            header('location:./comptutil/comptuti.php');
+        } else{
+            session_destroy();
+            echo"votre mot de passe ou email est incorect"; 
+        }
+       
+  }else{
+     echo"Veuillez completer tous les champs ";  
+ }
+
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/connexion.css" rel="stylesheet">
+    <title>NUFIALA | CONNEXION</title>
+</head>
+
+<title>NUFIALA |connexion</title>
+<body>
+   
+    <div class ="container-nav">
+        <div><h1 class="logo"><a href="index.html">NUFIALA</a></h1></div>
+    </div>  
+    <div class="containersecond-nav">
+        <div class="container-descriptions">
+            <h2>BIENVENUE SUR NUFIALA</h2>
+        </div>
+    </div>
+
+    <form Action="" Method="POST">
+        <div class="container_form">
+                        <p>CONNEXION</p>
+            <div class="first-div ">
+            <div><label class="lb">Email</label></div>
+                <input type="email" id="ident" placeholder="veuillez saisir votre email" name="ident" >
+            </div>
+            <div class ="first-div">
+               <div class="lb"><label >Password</label></div>
+                <input type="password" id="ident"  placeholder="Mot de passe" name="password" >
+            </div>
+            <div class="second-div">
+            <input type="submit" name="submit"  value="CONNECTER">
+                <a href="inscription.php">S'INSCRIR</a>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

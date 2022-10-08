@@ -1,0 +1,253 @@
+.container-nav{  
+    width:auto;
+    height:70px;
+    background-color:white;
+     margin:10px;
+     position: sticky;
+    display: flex; 
+    justify-content: center;
+}
+.containersecond-nav{ 
+    width:auto;
+    height:100px;
+    background-color:#5fcf80;
+}
+.container_form{
+  width:350px;
+  height:500px; 
+  border:1px solid white;
+  margin: auto;
+  margin-top:10%;
+  border-radius:20px;
+  background-color:white;
+  box-shadow:4px 4px 4px 4px rgba(68, 68, 68, 0.171);
+  cursor:pointer;
+ 
+}
+.first-div{
+    text-align: center;
+    margin:5px;
+    margin-top:10px;
+}
+
+.container-descriptions{
+    text-align: center;
+    color:white;
+    padding-top:10px;
+}
+.logo {
+        font-size: 30px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        
+}
+
+.logo a {
+        color: #5fcf80;
+        position: absolute;
+        left:15%;
+        top:25px;
+        text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: #37423b;
+}
+p {
+    font-size:20px;
+    margin-bottom:0;
+    color:black;
+    margin-left:35%;
+ }
+ 
+button a{
+        color:white;
+        width:150px;
+        height:100px;
+}
+button:hover{
+        background: #3ac162;
+        color: #fff;
+}
+label{  
+    font-size:20px;
+    margin-left:10px;
+    color:black;
+}
+input{
+    width:150px;
+    height:25px;
+}
+.first_container{
+    display:flex;
+    margin:10px;
+    margin-top:35px;
+}
+.seconde_container{
+    display: flex;
+    margin:10px;
+    margin-top:35px;
+}
+.th_container{
+    display: flex;
+    margin:10px;
+    padding:5px; 
+}
+
+input[type ="submit"]{
+    width:150px;
+    height:40px;
+    border: #5fcf80;
+    background-color:#5fcf80;
+    cursor:pointer;
+    border-radius:5px;
+    color:white;
+    font-size:15px;
+    margin-left:10%;
+    margin-top:15%;
+}
+input[type ="submit"]:hover{
+    background-color: #3ac162;
+}
+@media only screen and (min-width:460px){
+    .container-nav{  
+        width:auto;
+        height:70px;
+        background-color:white;
+         margin:10px;
+         position: sticky;
+        display: flex; 
+        justify-content: center;
+    }
+    .containersecond-nav{ 
+        width:auto;
+        height:100px;
+        background-color:#5fcf80;
+    }
+    .container_form{
+      width:500px;
+      height:675px; 
+      border:1px solid white;
+      margin: auto;
+      margin-top:2%;
+      border-radius:20px;
+      background-color:white;
+      box-shadow:4px 4px 4px 4px rgba(68, 68, 68, 0.171);
+      cursor:pointer;
+     
+    }
+    .first-div{
+        text-align: center;
+        margin-top:15px;
+        margin-top:30px;
+    }
+    .container-descriptions{
+        text-align: center;
+        color:white;
+        padding-top:10px;
+    }
+    .logo {
+            font-size: 30px;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: "Poppins", sans-serif;
+            
+    }
+
+    input{
+        width:400px;
+        height:30px;
+        border:none;
+        border-bottom:2px solid black;
+        outline: none;
+    }
+
+    .first_container{
+        display: inline;
+        margin:0;
+        margin-top:0;
+    }
+    .seconde_container{
+        display: inline;
+        margin:0;
+        margin-top:0;
+    }
+    .thr_container{
+        display: inline;
+        margin:0;
+
+    }
+    .first-divp{
+        display: inline;
+      
+        
+    }
+    input[type ="submit"]{
+        width:150px;
+        height:40px;
+        border: #5fcf80;
+        background-color:#5fcf80;
+        cursor:pointer;
+        border-radius:5px;
+        color:white;
+        font-size:15px;
+        margin-left:10%;
+        margin-top:15%;
+    }
+    input[type ="submit"]:hover{
+        background-color: #3ac162;
+    }
+    label{  
+        font-size:25px;
+        margin-left:10px;
+        color:black;
+    }
+    .p{
+        margin-bottom:10px;
+        text-align: center;
+        margin-left:25%;
+        font-size:30px;
+        color:black;
+        stroke:100;
+    }
+    .logo a {
+            color: #5fcf80;
+            position: absolute;
+            left:15%;
+            top:25px;
+            text-decoration: none;
+    }
+    a{
+        text-decoration: none;
+        color: #37423b;
+    }
+    p {
+        font-size: 14px;
+        margin-bottom: 0;
+        color:white;
+        margin-right:25%;
+     }
+    input[type ="submit"]{
+        width:150px;
+        height:40px;
+        border: #5fcf80;
+        background-color:#5fcf80;
+        cursor:pointer;
+        border-radius:5px;
+        color:white;
+        font-size:15px;
+        margin-left:20%;
+    }
+    input[type ="submit"]:hover{
+        background-color: #3ac162;
+    }
+}
